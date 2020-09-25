@@ -60,7 +60,9 @@ fn ex2(word: &String) -> String {
     if vowels.contains(&first) {
         return format!("{}-{}", word, "hay");
     } else {
-        return format!("{}-{}{}", word[1..], first, "ay");
+        let mut copy = String::from(word);
+        copy.remove(0);
+        return format!("{}-{}{}", copy, first, "ay");
     }
 }
 
